@@ -1,0 +1,35 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "This is a productivity app that allows user to manage their tasks throughout the day. This tasks makes use of the MERN tech stack.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spencer-rafada/todo-app.git"
+  },
+  "keywords": [
+    "MERN",
+    "mongodb",
+    "express",
+    "react",
+    "nodejs"
+  ],
+  "author": "Spencer Rafada, Aaron Tumbokon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spencer-rafada/todo-app/issues"
+  },
+  "homepage": "https://github.com/spencer-rafada/todo-app#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
