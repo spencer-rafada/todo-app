@@ -2,6 +2,7 @@
 
 - Spencer Rafada
 - Aaron Tumbokon
+- Jarom Costales
 
 # Setup
 
