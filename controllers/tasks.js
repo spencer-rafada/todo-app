@@ -7,7 +7,7 @@ export const getTasks = async (_, res) => {
   res.json(search_result);
 };
 
-export const postTasks = (req, res) => {
+export const postTask = (req, res) => {
   // console.log(req.body);
   const received_task = req.body;
   const new_task = new Task({
@@ -22,6 +22,28 @@ export const postTasks = (req, res) => {
       return handleError(error);
     } else {
       res.json(`Task: ${received_task.task_name} has been saved to database.`);
+    }
+  });
+};
+
+// This function should receive all of the information from the task
+export const updateTask = async (req, res) => {
+  const update_query = req.body;
+  const _ = await Task.updateOne(
+    { _id: update_query._id },
+    {
+      task_name: update_query.task_name,
+      description: update_query.description,
+      start_date: update_query.start_date,
+      due_date: update_query.due_date,
+      category: update_query.category,
+      complete: update_query.complete,
+    }
+  ).then((error) => {
+    if (error) {
+      res.json(`Task: ${update_query.task_name} has been updated`);
+    } else {
+      res.json(`${update_query._id} Failed to update task.`);
     }
   });
 };
