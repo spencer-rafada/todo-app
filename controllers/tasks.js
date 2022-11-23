@@ -47,3 +47,14 @@ export const updateTask = async (req, res) => {
     }
   });
 };
+
+export const deleteTask = async (req, res) => {
+  const delete_query = req.body;
+  const _ = await Task.deleteOne({ _id: delete_query._id }).then((response) => {
+    if (response.deletedCount == 0) {
+      res.json(`No matching file deleted.`);
+    } else {
+      res.json(`Deleted ${response.deletedCount} document(s).`);
+    }
+  });
+};
